@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/ejzimmer/jira-migrator/issues"
   },
-  "homepage": "https://github.com/ejzimmer/jira-migrator#readme"
+  "homepage": "https://github.com/ejzimmer/jira-migrator#readme",
+  "dependencies": {
+    "request": "^2.72.0"
+  }
 }
