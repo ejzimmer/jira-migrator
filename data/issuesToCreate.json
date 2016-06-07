@@ -1,0 +1,48 @@
+{
+  "issueUpdates": [
+    {
+      "fields": {
+        "project": {
+          "key": "NFRIP"
+        },
+        "summary": "something's wrong",
+        "issuetype": {
+          "id": "10001"
+        },
+        "assignee": {
+          "name": "erinz"
+        },
+        "reporter": {
+          "name": "erinz"
+        },
+        "labels": [
+          "bugfix",
+          "blitz_test"
+        ],
+        "description": "description"
+      }
+    },
+    {
+      "update": {},
+      "fields": {
+        "project": {
+          "key": "NFRIP"
+        },
+        "summary": "something's very wrong",
+        "issuetype": {
+          "id": "10001"
+        },
+        "assignee": {
+          "name": "erinz"
+        },
+        "reporter": {
+          "name": "erinz"
+        },
+        "labels": [
+          "new_release"
+        ],
+        "description": "description"
+      }
+    }
+  ]
+}
