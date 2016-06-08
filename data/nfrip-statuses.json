@@ -1,0 +1,344 @@
+[
+  {
+    "self": "http://intranet.ga.gov.au/jira/rest/api/latest/issuetype/58",
+    "id": "58",
+    "name": "Epic",
+    "subtask": false,
+    "statuses": [
+      {
+        "self": "http://intranet.ga.gov.au/jira/rest/api/latest/status/1",
+        "description": "The issue is open and ready for the assignee to start work on it.",
+        "iconUrl": "http://intranet.ga.gov.au/jira/images/icons/statuses/open.png",
+        "name": "Open",
+        "id": "1"
+      },
+      {
+        "self": "http://intranet.ga.gov.au/jira/rest/api/latest/status/3",
+        "description": "This issue is being actively worked on at the moment by the assignee.",
+        "iconUrl": "http://intranet.ga.gov.au/jira/images/icons/statuses/generic.png",
+        "name": "In Progress",
+        "id": "3"
+      },
+      {
+        "self": "http://intranet.ga.gov.au/jira/rest/api/latest/status/5",
+        "description": "A resolution has been taken, and it is awaiting verification by reporter. From here issues are either reopened, or are closed.",
+        "iconUrl": "http://intranet.ga.gov.au/jira/images/icons/statuses/resolved.png",
+        "name": "Resolved",
+        "id": "5"
+      },
+      {
+        "self": "http://intranet.ga.gov.au/jira/rest/api/latest/status/4",
+        "description": "This issue was once resolved, but the resolution was deemed incorrect. From here issues are either marked assigned or resolved.",
+        "iconUrl": "http://intranet.ga.gov.au/jira/images/icons/statuses/reopened.png",
+        "name": "Reopened",
+        "id": "4"
+      },
+      {
+        "self": "http://intranet.ga.gov.au/jira/rest/api/latest/status/6",
+        "description": "The issue is considered finished, the resolution is correct. Issues which are closed can be reopened.",
+        "iconUrl": "http://intranet.ga.gov.au/jira/images/icons/statuses/closed.png",
+        "name": "Closed",
+        "id": "6"
+      },
+      {
+        "self": "http://intranet.ga.gov.au/jira/rest/api/latest/status/10068",
+        "description": "step for s/w dev testing",
+        "iconUrl": "http://intranet.ga.gov.au/jira/images/icons/statuses/generic.png",
+        "name": "In Testing",
+        "id": "10068"
+      },
+      {
+        "self": "http://intranet.ga.gov.au/jira/rest/api/latest/status/10028",
+        "description": "Indicates that the issue requires a review.",
+        "iconUrl": "http://intranet.ga.gov.au/jira/images/icons/silk/icons/magnifier.png",
+        "name": "Requires Review",
+        "id": "10028"
+      }
+    ]
+  },
+  {
+    "self": "http://intranet.ga.gov.au/jira/rest/api/latest/issuetype/60",
+    "id": "60",
+    "name": "Technical task",
+    "subtask": true,
+    "statuses": [
+      {
+        "self": "http://intranet.ga.gov.au/jira/rest/api/latest/status/1",
+        "description": "The issue is open and ready for the assignee to start work on it.",
+        "iconUrl": "http://intranet.ga.gov.au/jira/images/icons/statuses/open.png",
+        "name": "Open",
+        "id": "1"
+      },
+      {
+        "self": "http://intranet.ga.gov.au/jira/rest/api/latest/status/3",
+        "description": "This issue is being actively worked on at the moment by the assignee.",
+        "iconUrl": "http://intranet.ga.gov.au/jira/images/icons/statuses/generic.png",
+        "name": "In Progress",
+        "id": "3"
+      },
+      {
+        "self": "http://intranet.ga.gov.au/jira/rest/api/latest/status/5",
+        "description": "A resolution has been taken, and it is awaiting verification by reporter. From here issues are either reopened, or are closed.",
+        "iconUrl": "http://intranet.ga.gov.au/jira/images/icons/statuses/resolved.png",
+        "name": "Resolved",
+        "id": "5"
+      },
+      {
+        "self": "http://intranet.ga.gov.au/jira/rest/api/latest/status/4",
+        "description": "This issue was once resolved, but the resolution was deemed incorrect. From here issues are either marked assigned or resolved.",
+        "iconUrl": "http://intranet.ga.gov.au/jira/images/icons/statuses/reopened.png",
+        "name": "Reopened",
+        "id": "4"
+      },
+      {
+        "self": "http://intranet.ga.gov.au/jira/rest/api/latest/status/6",
+        "description": "The issue is considered finished, the resolution is correct. Issues which are closed can be reopened.",
+        "iconUrl": "http://intranet.ga.gov.au/jira/images/icons/statuses/closed.png",
+        "name": "Closed",
+        "id": "6"
+      },
+      {
+        "self": "http://intranet.ga.gov.au/jira/rest/api/latest/status/10068",
+        "description": "step for s/w dev testing",
+        "iconUrl": "http://intranet.ga.gov.au/jira/images/icons/statuses/generic.png",
+        "name": "In Testing",
+        "id": "10068"
+      },
+      {
+        "self": "http://intranet.ga.gov.au/jira/rest/api/latest/status/10028",
+        "description": "Indicates that the issue requires a review.",
+        "iconUrl": "http://intranet.ga.gov.au/jira/images/icons/silk/icons/magnifier.png",
+        "name": "Requires Review",
+        "id": "10028"
+      }
+    ]
+  },
+  {
+    "self": "http://intranet.ga.gov.au/jira/rest/api/latest/issuetype/1",
+    "id": "1",
+    "name": "Bug",
+    "subtask": false,
+    "statuses": [
+      {
+        "self": "http://intranet.ga.gov.au/jira/rest/api/latest/status/1",
+        "description": "The issue is open and ready for the assignee to start work on it.",
+        "iconUrl": "http://intranet.ga.gov.au/jira/images/icons/statuses/open.png",
+        "name": "Open",
+        "id": "1"
+      },
+      {
+        "self": "http://intranet.ga.gov.au/jira/rest/api/latest/status/3",
+        "description": "This issue is being actively worked on at the moment by the assignee.",
+        "iconUrl": "http://intranet.ga.gov.au/jira/images/icons/statuses/generic.png",
+        "name": "In Progress",
+        "id": "3"
+      },
+      {
+        "self": "http://intranet.ga.gov.au/jira/rest/api/latest/status/5",
+        "description": "A resolution has been taken, and it is awaiting verification by reporter. From here issues are either reopened, or are closed.",
+        "iconUrl": "http://intranet.ga.gov.au/jira/images/icons/statuses/resolved.png",
+        "name": "Resolved",
+        "id": "5"
+      },
+      {
+        "self": "http://intranet.ga.gov.au/jira/rest/api/latest/status/4",
+        "description": "This issue was once resolved, but the resolution was deemed incorrect. From here issues are either marked assigned or resolved.",
+        "iconUrl": "http://intranet.ga.gov.au/jira/images/icons/statuses/reopened.png",
+        "name": "Reopened",
+        "id": "4"
+      },
+      {
+        "self": "http://intranet.ga.gov.au/jira/rest/api/latest/status/6",
+        "description": "The issue is considered finished, the resolution is correct. Issues which are closed can be reopened.",
+        "iconUrl": "http://intranet.ga.gov.au/jira/images/icons/statuses/closed.png",
+        "name": "Closed",
+        "id": "6"
+      },
+      {
+        "self": "http://intranet.ga.gov.au/jira/rest/api/latest/status/10068",
+        "description": "step for s/w dev testing",
+        "iconUrl": "http://intranet.ga.gov.au/jira/images/icons/statuses/generic.png",
+        "name": "In Testing",
+        "id": "10068"
+      },
+      {
+        "self": "http://intranet.ga.gov.au/jira/rest/api/latest/status/10028",
+        "description": "Indicates that the issue requires a review.",
+        "iconUrl": "http://intranet.ga.gov.au/jira/images/icons/silk/icons/magnifier.png",
+        "name": "Requires Review",
+        "id": "10028"
+      }
+    ]
+  },
+  {
+    "self": "http://intranet.ga.gov.au/jira/rest/api/latest/issuetype/73",
+    "id": "73",
+    "name": "Objective",
+    "subtask": false,
+    "statuses": [
+      {
+        "self": "http://intranet.ga.gov.au/jira/rest/api/latest/status/1",
+        "description": "The issue is open and ready for the assignee to start work on it.",
+        "iconUrl": "http://intranet.ga.gov.au/jira/images/icons/statuses/open.png",
+        "name": "Open",
+        "id": "1"
+      },
+      {
+        "self": "http://intranet.ga.gov.au/jira/rest/api/latest/status/3",
+        "description": "This issue is being actively worked on at the moment by the assignee.",
+        "iconUrl": "http://intranet.ga.gov.au/jira/images/icons/statuses/generic.png",
+        "name": "In Progress",
+        "id": "3"
+      },
+      {
+        "self": "http://intranet.ga.gov.au/jira/rest/api/latest/status/5",
+        "description": "A resolution has been taken, and it is awaiting verification by reporter. From here issues are either reopened, or are closed.",
+        "iconUrl": "http://intranet.ga.gov.au/jira/images/icons/statuses/resolved.png",
+        "name": "Resolved",
+        "id": "5"
+      },
+      {
+        "self": "http://intranet.ga.gov.au/jira/rest/api/latest/status/4",
+        "description": "This issue was once resolved, but the resolution was deemed incorrect. From here issues are either marked assigned or resolved.",
+        "iconUrl": "http://intranet.ga.gov.au/jira/images/icons/statuses/reopened.png",
+        "name": "Reopened",
+        "id": "4"
+      },
+      {
+        "self": "http://intranet.ga.gov.au/jira/rest/api/latest/status/6",
+        "description": "The issue is considered finished, the resolution is correct. Issues which are closed can be reopened.",
+        "iconUrl": "http://intranet.ga.gov.au/jira/images/icons/statuses/closed.png",
+        "name": "Closed",
+        "id": "6"
+      },
+      {
+        "self": "http://intranet.ga.gov.au/jira/rest/api/latest/status/10068",
+        "description": "step for s/w dev testing",
+        "iconUrl": "http://intranet.ga.gov.au/jira/images/icons/statuses/generic.png",
+        "name": "In Testing",
+        "id": "10068"
+      },
+      {
+        "self": "http://intranet.ga.gov.au/jira/rest/api/latest/status/10028",
+        "description": "Indicates that the issue requires a review.",
+        "iconUrl": "http://intranet.ga.gov.au/jira/images/icons/silk/icons/magnifier.png",
+        "name": "Requires Review",
+        "id": "10028"
+      }
+    ]
+  },
+  {
+    "self": "http://intranet.ga.gov.au/jira/rest/api/latest/issuetype/5",
+    "id": "5",
+    "name": "Sub-task",
+    "subtask": true,
+    "statuses": [
+      {
+        "self": "http://intranet.ga.gov.au/jira/rest/api/latest/status/1",
+        "description": "The issue is open and ready for the assignee to start work on it.",
+        "iconUrl": "http://intranet.ga.gov.au/jira/images/icons/statuses/open.png",
+        "name": "Open",
+        "id": "1"
+      },
+      {
+        "self": "http://intranet.ga.gov.au/jira/rest/api/latest/status/3",
+        "description": "This issue is being actively worked on at the moment by the assignee.",
+        "iconUrl": "http://intranet.ga.gov.au/jira/images/icons/statuses/generic.png",
+        "name": "In Progress",
+        "id": "3"
+      },
+      {
+        "self": "http://intranet.ga.gov.au/jira/rest/api/latest/status/5",
+        "description": "A resolution has been taken, and it is awaiting verification by reporter. From here issues are either reopened, or are closed.",
+        "iconUrl": "http://intranet.ga.gov.au/jira/images/icons/statuses/resolved.png",
+        "name": "Resolved",
+        "id": "5"
+      },
+      {
+        "self": "http://intranet.ga.gov.au/jira/rest/api/latest/status/4",
+        "description": "This issue was once resolved, but the resolution was deemed incorrect. From here issues are either marked assigned or resolved.",
+        "iconUrl": "http://intranet.ga.gov.au/jira/images/icons/statuses/reopened.png",
+        "name": "Reopened",
+        "id": "4"
+      },
+      {
+        "self": "http://intranet.ga.gov.au/jira/rest/api/latest/status/6",
+        "description": "The issue is considered finished, the resolution is correct. Issues which are closed can be reopened.",
+        "iconUrl": "http://intranet.ga.gov.au/jira/images/icons/statuses/closed.png",
+        "name": "Closed",
+        "id": "6"
+      },
+      {
+        "self": "http://intranet.ga.gov.au/jira/rest/api/latest/status/10068",
+        "description": "step for s/w dev testing",
+        "iconUrl": "http://intranet.ga.gov.au/jira/images/icons/statuses/generic.png",
+        "name": "In Testing",
+        "id": "10068"
+      },
+      {
+        "self": "http://intranet.ga.gov.au/jira/rest/api/latest/status/10028",
+        "description": "Indicates that the issue requires a review.",
+        "iconUrl": "http://intranet.ga.gov.au/jira/images/icons/silk/icons/magnifier.png",
+        "name": "Requires Review",
+        "id": "10028"
+      }
+    ]
+  },
+  {
+    "self": "http://intranet.ga.gov.au/jira/rest/api/latest/issuetype/4",
+    "id": "4",
+    "name": "Improvement",
+    "subtask": false,
+    "statuses": [
+      {
+        "self": "http://intranet.ga.gov.au/jira/rest/api/latest/status/1",
+        "description": "The issue is open and ready for the assignee to start work on it.",
+        "iconUrl": "http://intranet.ga.gov.au/jira/images/icons/statuses/open.png",
+        "name": "Open",
+        "id": "1"
+      },
+      {
+        "self": "http://intranet.ga.gov.au/jira/rest/api/latest/status/3",
+        "description": "This issue is being actively worked on at the moment by the assignee.",
+        "iconUrl": "http://intranet.ga.gov.au/jira/images/icons/statuses/generic.png",
+        "name": "In Progress",
+        "id": "3"
+      },
+      {
+        "self": "http://intranet.ga.gov.au/jira/rest/api/latest/status/5",
+        "description": "A resolution has been taken, and it is awaiting verification by reporter. From here issues are either reopened, or are closed.",
+        "iconUrl": "http://intranet.ga.gov.au/jira/images/icons/statuses/resolved.png",
+        "name": "Resolved",
+        "id": "5"
+      },
+      {
+        "self": "http://intranet.ga.gov.au/jira/rest/api/latest/status/4",
+        "description": "This issue was once resolved, but the resolution was deemed incorrect. From here issues are either marked assigned or resolved.",
+        "iconUrl": "http://intranet.ga.gov.au/jira/images/icons/statuses/reopened.png",
+        "name": "Reopened",
+        "id": "4"
+      },
+      {
+        "self": "http://intranet.ga.gov.au/jira/rest/api/latest/status/6",
+        "description": "The issue is considered finished, the resolution is correct. Issues which are closed can be reopened.",
+        "iconUrl": "http://intranet.ga.gov.au/jira/images/icons/statuses/closed.png",
+        "name": "Closed",
+        "id": "6"
+      },
+      {
+        "self": "http://intranet.ga.gov.au/jira/rest/api/latest/status/10068",
+        "description": "step for s/w dev testing",
+        "iconUrl": "http://intranet.ga.gov.au/jira/images/icons/statuses/generic.png",
+        "name": "In Testing",
+        "id": "10068"
+      },
+      {
+        "self": "http://intranet.ga.gov.au/jira/rest/api/latest/status/10028",
+        "description": "Indicates that the issue requires a review.",
+        "iconUrl": "http://intranet.ga.gov.au/jira/images/icons/silk/icons/magnifier.png",
+        "name": "Requires Review",
+        "id": "10028"
+      }
+    ]
+  }
+]
