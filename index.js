@@ -1,10 +1,11 @@
 const request = require('request');
+const q = require('q');
 
 const groundIssues = require('./data/unresolved.json');
 const config = require('./config/config.json');
 const names = require('./config/names.json');
 
-const uploadUrl = config.cloud.url + 'issue/bulk';
+const uploadUrl = config.cloud.url + 'issue/';
 const username = config.cloud.username;
 const password = config.cloud.password;
 
@@ -13,7 +14,7 @@ if (groundIssues.total > groundIssues.maxResults) {
 }
 let issues = groundIssues.issues;
 
-let newIssues = [];
+let newIssues = [], newSubTasks = [];
 
 let mapIssueType = function (issueType) {
 
@@ -25,13 +26,13 @@ let mapIssueType = function (issueType) {
         bug: 10004
     };
 
-    if (issueType.subtask) {
-        return cloud.subtask;
-    } else if (['Improvement', 'Objective', 'Technical task'].includes(issueType.name)) {
+    if (['Improvement', 'Objective'].includes(issueType.name)) {
         return cloud.story;
+    } else if (issueType.name === 'Technical Task') {
+        return cloud.task;
     } else if (issueType.name === 'Bug') {
         return cloud.bug;
-    } else if (issueType.name === 'Epid') {
+    } else if (issueType.name === 'Epic') {
         return cloud.bug;
     }
     
@@ -39,7 +40,7 @@ let mapIssueType = function (issueType) {
 };
 
 let mapPriority = function (fields) {
-
+    
     let priorities = {
         highest: 1,
         high: 2,
@@ -55,7 +56,7 @@ let mapPriority = function (fields) {
 
     // NFRIP uses custom MoSoCoW priorities
     if (fields.customfield_14250) {
-        priority = fields.customfield_14250;
+        priority = fields.customfield_14250.value;
     }
 
     return priorities[priorityMap[priority]];
@@ -63,27 +64,6 @@ let mapPriority = function (fields) {
 
 let mapName = function (name) {
     return names[name];
-};
-
-let mapStatus = function (status) {
-
-    let statuses = {
-        inProgress: 3,
-        completed: 10001,
-        socialised: 5,
-        todo: 10000,
-        done: 10200,
-        open: 10300,
-        review: 10301,
-        cancelled: 10303,
-        escalation: 10400,
-        testing: 10500
-    };
-    
-    let statusMap = require('./config/statuses.json');
-    let status = status.name;
-    
-    return statuses[statusMap[status]];
 };
 
 issues.forEach(function (issue) {
@@ -98,64 +78,62 @@ issues.forEach(function (issue) {
                 id: mapIssueType(issue.fields.issuetype)
             },
             priority: {
-                id: mapPriority(issue.fields)
-            },
-            assignee: {
-                name: mapName(issue.fields.assignee.name)
+                id: '' + mapPriority(issue.fields)
             },
             reporter: {
                 name: mapName(issue.fields.reporter.name)
             },
-            status: {
-                id: mapStatus(issue.fields.status)
-            },
-            created: issue.fields.created,
-            description: issue.fields.description
+            description: issue.fields.description || 'This issue contained no description'
         }
     };
-
-    newIssues.push(newIssue);
+    
+    if (issue.fields.assignee) {
+        newIssue.fields.assignee = {
+            name: mapName(issue.fields.assignee.name)
+        }
+    }
+    
+    if (issue.fields.issuetype.subtask) {
+        newSubTasks.push(issue);
+    } else {
+        newIssues.push({groundKey: issue.key, issue: newIssue});
+    }
 
 });
 
-let data = {
-    issueUpdates: newIssues
-};
+console.log(`Creating ${newIssues.length} issues`);
 
-let outputResponse = function (response) {
-    response = JSON.parse(response);
-
-    if (response.issues.length) {
-        console.log('New issues created:');
-        response.issues.forEach(function (issue) {
-            console.log(issue.key)
-        });
-    }
-
-    if (response.errors.length) {
-        console.log('The following issues could not be created:');
-        response.errors.forEach(function (error) {
-            error = JSON.parse(error);
-            console.log(issues[error.failedElementNumber]);
-
-            let errors = error.elementErrors;
-            errors.errorMessages.forEach(function (message) {
-                console.log(message);
-            });
-            for (let e in errors) {
-                if (errors.hasOwnProperty(e)) {
-                    console.log(e + ': ' + error.elementErrors[e]);
+let requests = [], successes = [], failures = [];
+newIssues.forEach(function (issue) {
+    let requestPromise = q.defer();
+    requests.push(requestPromise.promise);
+    request.post({url: uploadUrl, body: issue.issue, json: true})
+            .auth(username, password)
+            .on('data', function (response) {
+                response = JSON.parse(response);
+                if (response.errorMessages) {
+                    console.log(`Could not create issue from ${issue.groundKey}`);
+                    console.log(response);
+                    failures.push(issue);
+                    requestPromise.reject();
+                } else {
+                    console.log(`${response.key} successfully created from ${issue.groundKey}`);
+                    successes.push({key: issue.groundKey, issue: response});
+                    requestPromise.resolve();
                 }
-            }
-        });
-    }
-};
+            })
+            .on('error', function (response) {
+                response = JSON.parse(response);
+                console.log(`Could not create issue from ${issue.groundKey}.`);
+                response.errorMessages.forEach(function (message) {
+                    console.log(message);
+                });
+                failures.push(issue);
+                requestPromise.reject();
+            });
+});
 
-request.post({url: uploadUrl, body: data, json: true})
-        .auth(username, password)
-        .on('data', function (response) {
-            outputResponse(response);
-        })
-        .on('error', function (response) {
-            outputResponse(response);
-        });
+q.all(function () {
+    // for each subtask, grab the parent issue from the successes list
+    // and find the new key, then create the subtask
+});
